@@ -1,10 +1,31 @@
 class Funcionario(
     val nome: String,
     val cpf: String,
-    val salario: Double
+    val salario: Double,
+    // adicionando property int para armazenar tipos de funcionarios
+    val tipo: Int // 0 funcionario, 1 gerente, 2 diretor
 ) {
     // criar metodo
     fun bonificacao(): Double {
-        return salario * 0.1
+        when (tipo) {
+            0 -> {
+                return salario * 0.1
+            }
+            1 -> {
+                return salario * 0.2
+            }
+            else -> {
+                return salario * 0.3
+            }
+        }
+    }
+
+    fun autentica(senha: Int) {
+        if (tipo == 1) {
+            // pode autenticar
+        }
+
     }
 }
+
+// qdo precisar criar algo mais ESPECIFICO evite criar tipos, crie uma NOVA CLASSE
