@@ -1,12 +1,10 @@
-// HERANCA
-// depois do construtor a gente usa a heranca, considere se a classe pai tem ou nao construtor
-// vamos retirar as implementacoes pq a classe pai tem seu construtor. deixam de ser propertie
-// e se transformam em apenas parametros que recebemos durante o cosntrutor
-class Gerente(
+
+class Diretor(
     nome: String,
     cpf: String,
     salario: Double,
-    val senha: Int
+    val senha: Int,
+    val plr: Int
 ) : Funcionario(
     nome = nome,
     cpf = cpf,
