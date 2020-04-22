@@ -15,9 +15,8 @@ class Gerente(
 
     // OVERRIDE | SOBRE ESCRITA: modificacao especifica para um comportamento que ja existe na classe mae
     // para reutilizar a assinatura temos que sobre escrever
-    override val bonificacao: Double
-        get() {
-            return salario * 0.2
+    fun bonificacao(): Double {
+            return super.bonificacao + salario
         }
 
     fun autentica(senha: Int): Boolean {
