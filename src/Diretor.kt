@@ -11,9 +11,8 @@ class Diretor(
     salario = salario
 ){ // delegamos o valor para a mae/pai porque é ela que iniciara as properties
 
-//    fun bonificacao(): Double {
-//        return salario * 0.2
-//    }
+    override val bonificacao: Double get() = salario * 0.3 // Outra maneira de implementar o property
+
 
     fun autentica(senha: Int): Boolean {
         if (this.senha == senha) {
