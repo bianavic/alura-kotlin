@@ -4,11 +4,8 @@ open class Funcionario(
     val cpf: String,
     val salario: Double
 ){
-    // criar metodo | retira a logica
-        open val bonificacao: Double // transformou em PROPERTY que tem comportamento similar a uma funcao
+        open val bonificacao: Double
         get() {
             return salario * 0.1
         }
 }
-
-// qdo precisar criar algo mais ESPECIFICO evite criar tipos, crie uma NOVA CLASSE
