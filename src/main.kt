@@ -1,58 +1,29 @@
 fun main() {
     println("Bem vindo ao pag&pay!")
 
-    val maria = Funcionario(
-        nome = "Maria",
-        cpf = "444",
-        salario = 1000.0
-    )
+    // usando HERANCA, POLIMORFISMO e SOBRESCRITA
 
-    println("nome: ${maria.nome}")
-    println("nome: ${maria.cpf}")
-    println("nome: ${maria.salario}")
-    println("bonificacao: ${maria.bonificacao}")
+    val contaCorrente = ContaCorrente(titular = "gui", numero = 1000)
+    val contaPoupanca = ContaPoupanca(titular = "fran", numero = 1001)
 
-    // criar gerente
-    val fran = Gerente(
-        nome = "Fran",
-        cpf = "222.222.222-22",
-        salario = 2000.0,
-        senha = 1234
-    )
+    contaCorrente.deposita(1000.0)
+    contaPoupanca.deposita(1000.0)
 
-    println("nome: ${fran.nome}")
-    println("nome: ${fran.cpf}")
-    println("nome: ${fran.salario}")
-    println("bonificacao: ${fran.bonificacao}")
+    println("saldo corrente: ${contaCorrente.saldo}")
+    println("saldo poupanca: ${contaPoupanca.saldo}")
 
-    if (fran.autentica(12345)) {
-        println("Autenticou com sucesso")
-    } else {
-        println("Falha na autenticacao")
-    }
+    contaCorrente.saca(100.0)
+    contaPoupanca.saca(100.0)
 
-    val gui: Diretor = Diretor(
-        nome = "Gui",
-        cpf = "333.333.333-33",
-        salario = 4000.0,
-        senha = 1234,
-        plr = 200
-    )
+    println("saldo corrente após saque: ${contaCorrente.saldo}")
+    println("saldo poupanca após saque: ${contaPoupanca.saldo}")
 
-    println("nome: ${gui.nome}")
-    println("nome: ${gui.cpf}")
-    println("nome: ${gui.salario}")
-    println("bonificacao: ${gui.bonificacao}")
-    println("plr: ${gui.plr}")
+    // polimorfismo com funcao transfere
+    contaCorrente.transfere(100.0, contaPoupanca)
+    println("saldo corrente após transferencia: ${contaCorrente.saldo}")
+    println("saldo poupanca após receber transferencia: ${contaPoupanca.saldo}")
 
-    val jose = Analista(nome = "Jose", cpf = "444.444.444-44", salario = 3000.0)
-
-    val calculadora = CalculadoraBonificacao()
-    calculadora.registra(maria)
-    calculadora.registra(fran)
-    calculadora.registra(gui)
-    calculadora.registra(jose)
-
-
-    println("Total de bonificacao: ${calculadora.total}")
+    contaPoupanca.transfere(300.0, contaCorrente)
+    println("saldo poupanca após transferencia para corrente: ${contaCorrente.saldo}")
+    println("saldo corrente após receber transferencia da poupanca: ${contaPoupanca.saldo}")
 }
