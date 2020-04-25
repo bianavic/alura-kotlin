@@ -5,8 +5,17 @@ class ContaPoupanca(
     titular = titular,
     numero = numero
 ) {
+    override fun deposita(valor: Double) {
+        TODO("Not yet implemented")
+    }
+
     override fun saca(valor: Double) {
-        val valorComTaxa = valor + 0.1
-        super.saca(valor)
+        if (this.saldo >= valor) {
+            this.saldo -= valor
+        }
+    }
+
+    override fun transfere(valor: Double, destino: Conta): Boolean {
+        TODO("Not yet implemented")
     }
 }
