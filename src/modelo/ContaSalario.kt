@@ -1,17 +1,16 @@
 package modelo
 
-import modelo.Conta
-
-class ContaPoupanca(
+class ContaSalario(
     titular: String,
     numero: Int
-) : ContaTransferivel(
+) : Conta(
     titular = titular,
     numero = numero
 ) {
     override fun saca(valor: Double) {
-        if(this.saldo >= valor){
-            this.saldo -= valor
+        val valorComTaxa = valor + 0.1
+        if(this.saldo >= valorComTaxa){
+            this.saldo -= valorComTaxa
         }
     }
 }
