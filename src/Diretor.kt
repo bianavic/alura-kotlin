@@ -10,7 +10,7 @@ class Diretor(
     cpf = cpf,
     salario = salario,
     senha = senha
-){ // delegamos o valor para a mae/pai porque é ela que iniciara as properties
+), Autenticavel { // delegamos o valor para a mae/pai porque é ela que iniciara as properties
 
     override val bonificacao: Double
         get() {
