@@ -16,6 +16,6 @@ class Gerente(
         }
 
     override fun autentica(senha: Int): Boolean {
-        return super<Autenticavel>.autentica(senha)
+        return autentica(senha)
     }
 }
