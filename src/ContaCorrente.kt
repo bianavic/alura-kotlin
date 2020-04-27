@@ -5,6 +5,10 @@ class ContaCorrente(
     titular = titular,
     numero = numero
 ) {
+    override fun deposita(valor: Double) {
+        TODO("Not yet implemented")
+    }
+
     // uso da heranca com a sobreescrita
     override fun saca(valor: Double ) {
         val valorComTaxa = valor + 0.1
