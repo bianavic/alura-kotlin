@@ -1,43 +1,25 @@
 package teste
 
-import modelo.ContaCorrente
-import modelo.ContaPoupanca
-import modelo.ContaSalario
+import modelo.*
 
 fun testaContasDiferentes() {
     // usando HERANCA, POLIMORFISMO e SOBRESCRITA
 
-    val contaCorrente = ContaCorrente(titular = "gui", numero = 1000)
-    val contaPoupanca = ContaPoupanca(titular = "fran", numero = 1001)
-    val contaSalario = ContaSalario(titular = "Marcos", numero = 3000)
+    val contaCorrente = ContaCorrente(Cliente(
+        nome = "Alex",
+        cpf = "111.111.111-11",
+        senha = 4,
+        endereco = Endereco(
+            logradouro = "Rua Vergueiro"
+        )
+    ), numero = 1000)
 
-    contaCorrente.deposita(1000.0)
-    contaPoupanca.deposita(1000.0)
-    contaSalario.deposita(1000.0)
+    println("titular")
+    println("nome do titular ${contaCorrente.titular.nome}")
+    println("cpf do titular ${contaCorrente.titular.cpf}")
+    println("endereco do titular ${contaCorrente.titular.endereco.logradouro}")
 
-    println("saldo corrente: ${contaCorrente.saldo}")
-    println("saldo poupanca: ${contaPoupanca.saldo}")
-    println("saldo salário: ${contaSalario.saldo}")
-
-    contaCorrente.saca(100.0)
-    contaPoupanca.saca(100.0)
-    contaSalario.saca(100.0)
-
-    println("saldo corrente após saque: ${contaCorrente.saldo}")
-    println("saldo poupanca após saque: ${contaPoupanca.saldo}")
-    println("saldo após saque salário: ${contaSalario.saldo}")
-
-    // polimorfismo com funcao transfere
-    contaCorrente.transfere(100.0, contaPoupanca)
-
-    println("saldo corrente após transferencia: ${contaCorrente.saldo}")
-    println("saldo poupanca após receber transferencia: ${contaPoupanca.saldo}")
-
-    contaPoupanca.transfere(300.0, contaCorrente)
-    println("saldo poupanca após transferencia para corrente: ${contaCorrente.saldo}")
-    println("saldo corrente após receber transferencia da poupanca: ${contaPoupanca.saldo}")
-
-//    contaSalario.transfere(200, contaCorrente)
-//    contaSalario.transfere(200, contaPoupanca)
+    val contaPoupanca = ContaPoupanca(Cliente(nome = "Fran", cpf = "", senha = 5), numero = 1001)
+    val contaSalario = ContaSalario(Cliente(nome = "Marco", cpf = "", senha = 6), numero = 3000)
 
 }

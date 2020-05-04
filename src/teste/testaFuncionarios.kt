@@ -36,26 +36,26 @@ fun testaFuncionarios() {
         println("Falha na autenticacao")
     }
 
-    val gui: Diretor = Diretor(
-        nome = "Gui",
-        cpf = "333.333.333-33",
-        salario = 4000.0,
-        senha = 1234,
-        plr = 200
-    )
-
-    println("nome: ${gui.nome}")
-    println("nome: ${gui.cpf}")
-    println("nome: ${gui.salario}")
-    println("bonificacao: ${gui.bonificacao}")
-    println("plr: ${gui.plr}")
+//    var gui: Diretor = Diretor(
+//        nome = "Gui",
+//        cpf = "333.333.333-33",
+//        salario = 4000.0,
+//        senha = 1234,
+//        plr = 200
+//    )
+//
+//    println("nome: ${gui.nome}")
+//    println("nome: ${gui.cpf}")
+//    println("nome: ${gui.salario}")
+//    println("bonificacao: ${gui.bonificacao}")
+//    println("plr: ${gui.plr}")
 
     val jose = Analista(nome = "Jose", cpf = "444.444.444-44", salario = 3000.0)
 
     val calculadora = CalculadoraBonificacao()
     calculadora.registra(maria)
     calculadora.registra(fran)
-    calculadora.registra(gui)
+    //calculadora.registra(gui)
     calculadora.registra(jose)
 
 

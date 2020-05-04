@@ -1,6 +1,6 @@
 package modelo
 
-class Diretor(
+abstract class Diretor(
     nome: String,
     cpf: String,
     salario: Double,

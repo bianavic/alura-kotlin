@@ -1,37 +1,30 @@
 package teste
 
+import modelo.Cliente
 import modelo.ContaCorrente
 import modelo.ContaPoupanca
 
 fun testaCopiasEReferencias() {
-  val contaCorrente = ContaCorrente(
-        titular = "Alex",
-        numero = 1000
-    )
-    val contaPoupanca = ContaPoupanca(
-        titular = "Fran",
-        numero = 1001
-    )
 
-    contaCorrente.deposita(1000.0)
-    contaPoupanca.deposita(1000.0)
+  val numeroX = 10
+  var numeroY = numeroX
+  numeroY++
 
-    println("saldo corrente: ${contaCorrente.saldo}")
-    println("saldo poupança: ${contaPoupanca.saldo}")
+  println("numeroX $numeroX")
+  println("numeroY $numeroY")
 
-    contaCorrente.saca(100.0)
-    contaPoupanca.saca(100.0)
+  val joao = Cliente(nome = "Joao", cpf = "", senha = 1)
 
-    println("saldo após saque corrente: ${contaCorrente.saldo}")
-    println("saldo após saque poupança: ${contaPoupanca.saldo}")
+  val contaJoao = ContaCorrente(joao,1000)
+  contaJoao.titular.nome = "Joao"
 
-    contaCorrente.transfere(100.0, contaPoupanca)
+  var contaMaria = ContaPoupanca(Cliente(nome = "Maria", cpf = "", senha = 2), 1001)
+  contaMaria.titular.nome = "Maria"
 
-    println("saldo corrente após transferir para poupança: ${contaCorrente.saldo}")
-    println("saldo poupança após receber transferência: ${contaPoupanca.saldo}")
+  println("titular conta joao: ${contaJoao.titular}")
+  println("titular conta maria: ${contaMaria.titular}")
 
-    contaPoupanca.transfere(200.0, contaCorrente)
+  println(contaJoao)
+  println(contaMaria)
 
-    println("saldo poupança após transferir para corrente: ${contaPoupanca.saldo}")
-    println("saldo corrente após receber transferência: ${contaCorrente.saldo}")
 }

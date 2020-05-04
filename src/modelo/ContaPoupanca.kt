@@ -3,9 +3,9 @@ package modelo
 import modelo.Conta
 
 class ContaPoupanca(
-    titular: String,
+    titular: Cliente,
     numero: Int
-) : ContaTransferivel(
+) : Conta(
     titular = titular,
     numero = numero
 ) {

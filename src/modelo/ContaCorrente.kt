@@ -1,11 +1,9 @@
 package modelo
 
-import modelo.Conta
-
 class ContaCorrente(
-    titular: String,
+    titular: Cliente,
     numero: Int
-) : ContaTransferivel(
+) : Conta(
     titular = titular,
     numero = numero
 ) {

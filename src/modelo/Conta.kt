@@ -1,7 +1,7 @@
 package modelo
 
 abstract class Conta(
-    var titular: String,
+    var titular: Cliente,
     val numero: Int
 ) {
     var saldo = 0.0
@@ -14,4 +14,13 @@ abstract class Conta(
     }
 
     abstract fun saca(valor: Double)
+
+    open fun transfere(valor: Double, destino: Conta): Boolean {
+        if (saldo >= valor) {
+            saldo -= valor
+            destino.deposita(valor)
+            return true
+        }
+        return false
+    }
 }
