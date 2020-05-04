@@ -1,7 +1,6 @@
 package teste
 
 import modelo.Cliente
-import modelo.Diretor
 import modelo.Gerente
 import modelo.SistemaInterno
 

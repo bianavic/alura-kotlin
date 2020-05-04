@@ -1,20 +1,30 @@
-import modelo.Cliente
-import modelo.Conta
-import modelo.ContaPoupanca
-import teste.testaContasDiferentes
-
-// variavel global == evitar porque qquer um pode alterar
-//var totalContas = 0
+import modelo.Endereco
 
 fun main() {
 
-    val alex = Cliente(nome = "Alex", cpf = "", senha = 1)
-    val contaPoupanca = ContaPoupanca(titular = alex, numero = 1000)
+    // no kotlin, todas as classes extends ANY == porque o kotlin atende qquer tipo de TIPO,
+    // a gente pode chamar todas as implementacoes da funcao println() abaixo.
+    println()
+    println(1)
+    println(1.0)
+    println(true)
+    println("teste")
 
-    // testaAutenticacao()
-    testaContasDiferentes()
+    // sobrecarga implicita
+    val endereco = Endereco(logradouro = "")
 
-    //println("total de contas ${contaPoupanca.total}")
-    println("total de contas ${Conta.total}")
+    // existe impressao objetos
+    println(endereco)
+
+    imprime()
+    imprimeInt(1)
+    imprimeTrue(1.0)
 
 }
+
+// sobrecarga = diferentes implementacoes para uma mesma assinatura
+fun imprime() {}
+
+fun imprimeInt(int: Int) {}
+
+fun imprimeTrue(double: Double) {}

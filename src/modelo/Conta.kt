@@ -11,8 +11,6 @@ abstract class Conta(
         private set
     }
 
-    //var total = 0 // cada membro que criamos é exclusivo da instancia/objeto,
-    // por isso nao conseguimos armazenar valores entre as classes
 
     // similar comportamento construtor secundario
     init {
