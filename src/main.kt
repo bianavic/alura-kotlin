@@ -1,7 +1,6 @@
 import modelo.Cliente
+import modelo.Conta
 import modelo.ContaPoupanca
-import modelo.totalContas
-import teste.testaAutenticacao // importacao de funcao
 import teste.testaContasDiferentes
 
 // variavel global == evitar porque qquer um pode alterar
@@ -16,6 +15,6 @@ fun main() {
     testaContasDiferentes()
 
     //println("total de contas ${contaPoupanca.total}")
-    println("total de contas ${totalContas}")
+    println("total de contas ${Conta.total}")
 
 }
