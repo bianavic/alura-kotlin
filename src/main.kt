@@ -1,17 +1,29 @@
 import modelo.Endereco
+import javax.print.attribute.IntegerSyntax
 
 // no kotlin, qdo trabalharmos com TIPOS PRIMITIVOS, eles sempre serao CLASSES
 // tudo que trabalhar no kotlin é um objeto
 
 fun main() {
     // sobrecarga implicita
-    val endereco = Endereco(logradouro = "")
+    val endereco = Endereco()
+    val enderecoNovo = Endereco()
 
-    // existe impressao objetos
+    // EQUALS
+    println(endereco.equals(enderecoNovo)) // FALSE
+    println(endereco.equals(endereco)) // TRUE
 
-    imprime(1)
-    imprime(1.0)
-    imprime(endereco)
+    // HASHCODE IDENTIFICACAO do objeto
+    println(endereco.hashCode())
+    println(enderecoNovo.hashCode())
+
+    // TO STRING = retorna REPRESENTACAO do objeto
+    println(endereco.toString())
+    println(enderecoNovo.toString())
+
+    // outra forma de imprimir em String observe que é na linguem java.
+    println("${endereco.javaClass}@${Integer.toHexString(endereco.hashCode())}")
+
 
 }
 
