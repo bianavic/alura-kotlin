@@ -7,7 +7,7 @@ import modelo.Endereco
 fun main() {
     println("Inicio main")
 
-    // simulando uma exception do tipo ArithmeticException
+    // simulando uma exception do tipo ArithmeticException ao tentar dividir por zero
     10/0
     funcao1()
     println("Fim main")
@@ -25,6 +25,7 @@ fun funcao2() {
         println(i)
 
         // simulando uma exception do tipo ClassCastException
+        // ao tentar converter uma classe de um tipo nao compativel
 //        val endereco = Any()
 //        endereco as Endereco
     }
