@@ -6,10 +6,18 @@ import javax.print.attribute.IntegerSyntax
 
 fun main() {
     // sobrecarga implicita
-    val endereco = Endereco(logradouro = "Rua Vergueiro", complemento = "Alura")
-    val enderecoNovo = Endereco(bairro = "Vila Mariana", numero = 100)
+    val endereco = Endereco(
+        logradouro = "Rua Vergueiro",
+        complemento = "Alura",
+        cep = "00000"
+    )
+    val enderecoNovo = Endereco(
+        bairro = "Vila Mariana",
+        numero = 100,
+        cep = "00000"
+    )
 
-    // EQUALS
+    // EQUALS == para ele o que importa é a referencia do objeto e nao a informacao que contem
     println(endereco.equals(enderecoNovo)) // FALSE
     println(endereco.equals(endereco)) // TRUE
 
