@@ -6,8 +6,8 @@ import javax.print.attribute.IntegerSyntax
 
 fun main() {
     // sobrecarga implicita
-    val endereco = Endereco()
-    val enderecoNovo = Endereco()
+    val endereco = Endereco(logradouro = "Rua Vergueiro", complemento = "Alura")
+    val enderecoNovo = Endereco(bairro = "Vila Mariana", numero = 100)
 
     // EQUALS
     println(endereco.equals(enderecoNovo)) // FALSE
