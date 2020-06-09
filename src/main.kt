@@ -44,6 +44,7 @@ fun main() {
             println(enderecoMaiusculo)
         }
 
+    // é um RECEIVER
     // aplique essas atribuicoes/configuracoes para este objeto"
     println("-------------------------APPLY----------------------------------")
 
@@ -60,6 +61,7 @@ fun main() {
 
     // obs: WITH nao é uma extensao, por isso esta sem o ponto [.],
     // por isso enviamos o objeto como um argumento
+    // agrupamento de chamadas de funcao em 1 objeto
 
     val enderecoWith = Endereco(logradouro = "rua vergueiro", numero = 3185)
 
@@ -77,12 +79,14 @@ fun main() {
     }
 
 
-
     println("-------------------------RUN----------------------------------")
-    // RUN se comporta como o LET ou como uma uma extensao
+    // RUN se comporta como o LET ou como uma uma extensao.
+    // retorna lambda mas o contexto é THIS
+    // ou retorna o lambda sem cotexto e sem extensao)
     run { println("execucao do RUN sem extensao") }
 
 
+    // É um ARGUMENTO
     // "e ALSO faz o seguinte com o objeto)
     // exe de uso, casos de LOG
     println("-------------------------ALSO----------------------------------")
@@ -93,5 +97,14 @@ fun main() {
             logradouro = "rua vergueiro"
             numero = 3185
         }
+
+    // para verificar o estado do objeto. se o estado for apropriado (takeIf: CONDICAO TRUE), retorna objeto,
+    // se for objeto nulo, o estado nao é apropriado (takeUnless: CONDICAO FALSE)
+    println("-------------------------TAKE IF & TAKE UNLESS----------------------------------")
+    val number = 3
+
+    val evenOrNull = number.takeIf { it % 2 == 0 }
+    val oddOrNull = number.takeUnless { it %2 == 0 }
+    println("even: $evenOrNull, odd: $oddOrNull")
 
 }
