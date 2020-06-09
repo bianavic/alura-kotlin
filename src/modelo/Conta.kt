@@ -14,7 +14,6 @@ abstract class Conta(
 
     // similar comportamento construtor secundario
     init {
-        println("criando conta")
         total++
     }
 

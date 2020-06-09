@@ -48,4 +48,12 @@ class Endereco(
         result = 31 * result + complemento.hashCode()
         return result
     }
+
+    fun completo(): String {
+        return """
+            $logradouro - $numero, $bairro, $cidade - $estado
+            $cep
+            $complemento
+        """.trimIndent()
+    }
 }
