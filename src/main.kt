@@ -14,16 +14,35 @@ fun main() {
         println("realizar pagamento")
     })
 
-    // SCOPE FUNCTIONS
-    // com lambda (IT)
+    println("-----------------------------------------------------------")
+
+    // SCOPE FUNCTIONS == precisamos nos atentar ao RETORNO que desejamos com essas funcoes
+    // ex: toUpperCase()
+    // Lambda (IT) com retorno da lambda
+    // [let, run, with]
     Endereco(logradouro = "rua vergueiro", numero = 3185)
         .let { endereco -> "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
         }.let(::println)
 
-    // com receiver (THIS)
+    println("-----------------------------------------------------------")
+
+    // Receiver (THIS) com retorno do objeto de contexto.
+    // ao inves de devolver o objeto de contexto ele devolveu o THIS,
+    // por isso nao printou o retorno COM letras maiusculas
+    // [apply, also]
+//    Endereco(logradouro = "rua vergueiro", numero = 3185)
+//        .apply {
+//            "$logradouro, $numero".toUpperCase()
+//        }.let(::println)
+
+
+    // CORRECAO do retorno para letra maiuscula
     Endereco(logradouro = "rua vergueiro", numero = 3185)
-        .apply {
+        .run {
             "$logradouro, $numero".toUpperCase()
-        }.let(::println)
+        }.let { enderecoMaiusculo: String ->
+            println(enderecoMaiusculo)
+        }
+
 
 }
