@@ -36,9 +36,14 @@ fun testaTipoFuncaoReferencia() {
     println(minhaFuncao(5, 10))
 }
 
+// tipo funcao
+//fun soma(a: Int, b: Int, resultado: (Int) -> Unit) {
+//    println("soma sendo efetuada")
+//    resultado(a + b)
+//}
 
-fun soma(a: Int, b: Int): Int {
-    return a + b
+fun soma(a: Int, b: Int) : Int {
+    return soma(a, b)
 }
 
 class Soma : (Int, Int) -> Int {
